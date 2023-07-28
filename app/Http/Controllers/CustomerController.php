@@ -12,11 +12,11 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        return Inertia::render('index',[
-            'customers'=> Customer::all()->map(function ($customer){
+        return Inertia::render('index', [
+            'customers' => Customer::all()->map(function ($customer) {
                 return [
-                    'id'=> $customer->id,
-                    'name'=> $customer->name,
+                    'id' => $customer->id,
+                    'name' => $customer->name,
                 ];
             })
         ]);
@@ -30,6 +30,12 @@ class CustomerController extends Controller
     public function store(CustomerRequest $request)
     {
         Customer::create($request->all());
+        return Redirect::route('customers.index');
+    }
+
+    public function distroy(Customer $customer)
+    {
+        $customer->delete();
         return Redirect::route('customers.index');
     }
 }
