@@ -1,5 +1,10 @@
 <template>
+    <br>
+    <br>
     <div class="card col-5 offset-3">
+        <div v-if="$page.props.flash.message" class="alert alert-success">
+            {{ $page.props.flash.message }}
+        </div>
         <table class="table table-bordered table-hover table-sm">
             <thead>
             <tr>
@@ -31,6 +36,7 @@ defineProps({
 function destroy(customerId) {
     router.delete('customers/' + customerId)
 }
+
 function edit(customerId) {
     router.get('customers/' + customerId + '/edit')
 }
