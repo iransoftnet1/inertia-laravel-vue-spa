@@ -12,7 +12,7 @@
                 <td>{{ customer.name }}</td>
                 <td>
                     <button class="btn btn-outline-info">Info</button>
-                    <button class="btn btn-primary">Edit</button>
+                    <button @click.prevent="edit(customer.id)" class="btn btn-primary">Edit</button>
                     <button @click.prevent="destroy(customer.id)" class="btn btn-outline-danger">Delete</button>
                 </td>
             </tr>
@@ -30,5 +30,8 @@ defineProps({
 
 function destroy(customerId) {
     router.delete('customers/' + customerId)
+}
+function edit(customerId) {
+    router.get('customers/' + customerId + '/edit')
 }
 </script>

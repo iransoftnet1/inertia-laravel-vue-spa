@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CustomerRequest;
+use App\Http\Requests\CustomerCreateRequest;
+use App\Http\Requests\CustomerUpdateRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -27,15 +28,28 @@ class CustomerController extends Controller
         return inertia::render('create');
     }
 
-    public function store(CustomerRequest $request)
+    public function store(CustomerCreateRequest $request)
     {
         Customer::create($request->all());
         return Redirect::route('customers.index');
     }
 
-    public function distroy(Customer $customer)
+    public function destroy(Customer $customer)
     {
         $customer->delete();
+        return Redirect::route('customers.index');
+    }
+
+    public function edit(Customer $customer)
+    {
+        return Inertia::render('edit', [
+            'customer' => $customer
+        ]);
+    }
+
+    public function update(CustomerUpdateRequest $request, Customer $customer)
+    {
+        $customer->update($request->all());
         return Redirect::route('customers.index');
     }
 }
