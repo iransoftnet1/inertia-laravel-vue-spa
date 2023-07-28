@@ -16,7 +16,7 @@
             <tr v-for="customer in customers">
                 <td>{{ customer.name }}</td>
                 <td>
-                    <button class="btn btn-outline-info">Info</button>
+                    <button @click.prevent="show(customer.id)" class="btn btn-outline-info">Info</button>
                     <button @click.prevent="edit(customer.id)" class="btn btn-primary">Edit</button>
                     <button @click.prevent="destroy(customer.id)" class="btn btn-outline-danger">Delete</button>
                 </td>
@@ -39,5 +39,9 @@ function destroy(customerId) {
 
 function edit(customerId) {
     router.get('customers/' + customerId + '/edit')
+}
+
+function show(customerId) {
+    router.get('customers/' + customerId + '/show')
 }
 </script>

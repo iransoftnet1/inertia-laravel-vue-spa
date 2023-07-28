@@ -52,4 +52,11 @@ class CustomerController extends Controller
         $customer->update($request->all());
         return Redirect::route('customers.index')->with('message','customer edited successfully');
     }
+
+    public function show(Customer $customer)
+    {
+        return Inertia::render('show', [
+            'customer' => $customer
+        ]);
+    }
 }
