@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Producer\Http\Controllers;
 
-use App\Http\Requests\ProducerUpdateRequest;
+use App\Http\Controllers\Controller;
 use App\Models\Producer;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Producer\Http\Requests\ProducerUpdateRequest;
 
 class ProducerController extends Controller
 {
