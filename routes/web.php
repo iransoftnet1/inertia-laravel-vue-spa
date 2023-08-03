@@ -18,13 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// customers
-Route::get('customers/create', [CustomerController::class, 'create']);
-Route::get('customers', [CustomerController::class, 'index'])->name('customers.index');
-Route::post('customers', [CustomerController::class, 'store']);
-Route::delete('customers/{customer}', [CustomerController::class, 'destroy']);
-Route::get('customers/{customer}/edit', [CustomerController::class, 'edit']);
-Route::put('customers/{customer}', [CustomerController::class, 'update']);
-Route::get('customers/{customer}/show', [CustomerController::class, 'show']);
+
 
 

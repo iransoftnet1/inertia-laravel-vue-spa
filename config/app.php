@@ -160,6 +160,7 @@ return [
          * Package Service Providers...
          */
         Producer\Providers\ProducerServiceProvider::class,
+        Customer\Providers\CustomersServiceProvider::class,
         /*
          * Application Service Providers...
          */

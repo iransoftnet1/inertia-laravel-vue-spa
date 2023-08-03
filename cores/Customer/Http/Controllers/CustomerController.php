@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Customer\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerCreateRequest;
 use App\Http\Requests\CustomerUpdateRequest;
-use App\Models\Customer;
-use Illuminate\Http\Request;
+use Customer\DB\Models\Customer;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 

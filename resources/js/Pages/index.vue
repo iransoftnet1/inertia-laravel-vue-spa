@@ -34,14 +34,14 @@ defineProps({
 })
 
 function destroy(customerId) {
-    router.delete('customers/' + customerId)
+    router.delete('/customers/' + customerId)
 }
 
 function edit(customerId) {
-    router.get('customers/' + customerId + '/edit')
+    router.get('/customers/' + customerId + '/edit')
 }
 
 function show(customerId) {
-    router.get('customers/' + customerId + '/show')
+    router.get('/customers/' + customerId + '/show')
 }
 </script>

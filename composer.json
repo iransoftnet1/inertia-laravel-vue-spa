@@ -31,7 +31,8 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Producer\\": "cores/Producer"
+            "Producer\\": "cores/Producer",
+            "Customer\\": "cores/Customer"
         }
     },
     "scripts": {
