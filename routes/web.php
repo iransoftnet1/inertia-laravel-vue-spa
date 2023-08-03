@@ -30,3 +30,5 @@ Route::get('customers/{customer}/show', [CustomerController::class, 'show']);
 
 // producer
 Route::get('producers', [ProducerController::class, 'index'])->name('producers.index');
+Route::get('producers/{producer}/edit', [ProducerController::class, 'edit']);
+Route::put('producers/{producer}', [ProducerController::class, 'update']);
