@@ -10,7 +10,7 @@ class ProducerController extends Controller
     public function index()
     {
         return Inertia::render('Producer/index', [
-            'producers' => Producer::query()->limit(10)->get()->map(function ($customer) {
+            'producers' => Producer::query()->paginate(15)->through(function ($customer) {
                 return [
                     'id' => $customer->id,
                     'title' => $customer->title,
