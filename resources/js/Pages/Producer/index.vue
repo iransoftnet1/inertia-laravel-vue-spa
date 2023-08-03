@@ -16,9 +16,7 @@
             <tr v-for="producer in producers.data">
                 <td>{{ producer.title }}</td>
                 <td>
-                    <button @click.prevent="show(producer.id)" class="btn btn-outline-info">Info</button>
                     <button @click.prevent="edit(producer.id)" class="btn btn-primary">Edit</button>
-                    <button @click.prevent="destroy(producer.id)" class="btn btn-outline-danger">Delete</button>
                 </td>
             </tr>
             </tbody>
